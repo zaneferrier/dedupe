@@ -1,6 +1,14 @@
+#include "src/hamming.hpp"
+#include "src/kd_tree.hpp"
+
+#include <cassert>
 #include <iostream>
 
-int main(int argc, char **argv) {
-    std::cout << "Hello, world!" << std::endl;
-    return 0;
+int main(int argc, char **argv) 
+{
+    dedupe::hamming_metric<std::uint32_t> hd;
+    assert(hd.distance(0, 0) == 0);
+    assert(hd.distance(0, 255) == 8);
+    
+    dedupe::kd_tree<std::int32_t, decltype(hd)> tree;
 }
