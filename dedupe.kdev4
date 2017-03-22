@@ -1,0 +1,4 @@
+[Project]
+Name=dedupe
+Manager=KDevCMakeManager
+VersionControl=kdevgit
